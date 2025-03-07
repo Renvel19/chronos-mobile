@@ -2,6 +2,7 @@ import 'package:chronos_mobile/ui/bloc/cubit/login/login_cubit.dart';
 import 'package:chronos_mobile/ui/widgets/input/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -34,6 +35,11 @@ class LoginForm extends StatelessWidget {
           FilledButton(
             onPressed: () {
               loginCubit.onSubmit();
+              print(password.errorMessage);
+              if (password.errorMessage == null &&
+                  username.errorMessage == null) {
+                context.push('/alarm-list');
+              }
             },
             child: const Text('Iniciar sesión'),
             style: FilledButton.styleFrom(minimumSize: const Size(200, 40)),

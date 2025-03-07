@@ -11,3 +11,5 @@ class AppTheme {
     );
   }
 }
+
+const alarmListcolor = Color(0xFFE3ECFF);
