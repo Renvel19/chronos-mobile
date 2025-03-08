@@ -1,5 +1,6 @@
 import 'package:chronos_mobile/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class AlarmListScreen extends StatefulWidget {
   const AlarmListScreen({Key? key}) : super(key: key);
@@ -187,7 +188,7 @@ class _AlarmListScreenState extends State<AlarmListScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Agregar nueva alarma
+          context.push('/create-alarm');
         },
         shape: const CircleBorder(),
         backgroundColor: Colors.deepPurple[800],
