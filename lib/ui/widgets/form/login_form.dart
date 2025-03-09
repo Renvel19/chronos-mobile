@@ -33,14 +33,15 @@ class LoginForm extends StatelessWidget {
           ),
           const SizedBox(height: 226),
           FilledButton(
-            onPressed: () {
-              loginCubit.onSubmit();
-              print(password.errorMessage);
-              if (password.errorMessage == null &&
-                  username.errorMessage == null) {
-                context.push('/alarm-list');
-              }
-            },
+            onPressed:
+                loginCubit.state.isValid
+                    ? () {
+                      loginCubit.onSubmit();
+                      print(password.errorMessage);
+
+                      context.push('/alarm-list');
+                    }
+                    : null,
             child: const Text('Iniciar sesión'),
             style: FilledButton.styleFrom(minimumSize: const Size(200, 40)),
           ),
