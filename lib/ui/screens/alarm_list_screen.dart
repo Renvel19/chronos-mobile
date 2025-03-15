@@ -87,7 +87,7 @@ class _AlarmListScreenState extends State<AlarmListScreen> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.pop(context);
+                        GoRouter.of(context).go('/dashboard');
                       },
                       child: Icon(
                         Icons.arrow_back,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class StudySessionsScreen extends StatelessWidget {
   const StudySessionsScreen({super.key});
@@ -16,14 +17,11 @@ class StudySessionsScreen extends StatelessWidget {
           style: TextStyle(
             color: Color(0xFF6A0DAD),
             fontWeight: FontWeight.bold,
-            fontSize: 18,
           ),
         ),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Color(0xFF6A0DAD)),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: () => GoRouter.of(context).go('/dashboard'),
         ),
         actions: [
           IconButton(
@@ -38,21 +36,26 @@ class StudySessionsScreen extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-              decoration: const BoxDecoration(
-                color: Color(0xFF6A0DAD),
-              ),
-              child: const Text(
+            const DrawerHeader(
+              decoration: BoxDecoration(color: Color(0xFF6A0DAD)),
+              child: Text(
                 'Menú',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
+                style: TextStyle(color: Colors.white, fontSize: 24),
               ),
             ),
             ListTile(
               leading: const Icon(Icons.alarm, color: Color(0xFF6A0DAD)),
               title: const Text('Alarmas'),
+              onTap: () => GoRouter.of(context).go('/alarmas'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.school, color: Color(0xFF6A0DAD)),
+              title: const Text('Estudio'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.notifications, color: Color(0xFF6A0DAD)),
+              title: const Text('Recordatorio'),
               onTap: () {},
             ),
           ],
@@ -61,36 +64,44 @@ class StudySessionsScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
+              width: double.infinity,
               padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
-                color: Colors.blue[50],
-                borderRadius: BorderRadius.circular(10),
+                color: Colors.blue[100],
+                borderRadius: BorderRadius.circular(12),
               ),
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Sesión 1',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 8),
                   Text('Inicio 00:00'),
                   Text('Fin 00:00'),
-                  Text('Materia Lorem'),
+                  Text('Materia: Lorem'),
                 ],
               ),
             ),
             const Spacer(),
-            FloatingActionButton(
-              backgroundColor: const Color(0xFF6A0DAD),
-              onPressed: () {},
-              child: const Icon(Icons.add, color: Colors.white),
-            ),
           ],
         ),
       ),
+      floatingActionButton: Align(
+        alignment: Alignment.bottomCenter,
+        child: FloatingActionButton(
+          onPressed: () {
+          },
+          shape: const CircleBorder(),
+          backgroundColor: const Color(0xFF6A0DAD),
+          child: const Icon(Icons.add, color: Colors.white),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

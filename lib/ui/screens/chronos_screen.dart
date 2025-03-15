@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:math';
+import 'package:go_router/go_router.dart';
 
 class ChronosScreen extends StatefulWidget {
   const ChronosScreen({super.key});
@@ -79,13 +80,15 @@ class _ChronosScreenState extends State<ChronosScreen> {
               leading: const Icon(Icons.alarm, color: Color(0xFF6A0DAD)),
               title: const Text('Alarmas'),
               onTap: () {
-                Navigator.pushNamed(context, '/alarm-list');
+                GoRouter.of(context).go('/alarm-list');
               },
             ),
             ListTile(
               leading: const Icon(Icons.school, color: Color(0xFF6A0DAD)),
               title: const Text('Estudio'),
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).go('/sesiones');
+              },
             ),
             ListTile(
               leading: const Icon(Icons.notifications, color: Color(0xFF6A0DAD)),
@@ -137,7 +140,7 @@ class _ChronosScreenState extends State<ChronosScreen> {
               ),
               onPressed: () {
                 if (route != null) {
-                  Navigator.pushNamed(context, route);
+                  GoRouter.of(context).go(route);
                 }
               },
               child: Text(text, style: const TextStyle(color: Colors.white)),
