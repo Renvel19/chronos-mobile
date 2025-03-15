@@ -39,11 +39,11 @@ class LoginForm extends StatelessWidget {
                       loginCubit.onSubmit();
                       print(password.errorMessage);
 
-                      context.push('/alarm-list');
+                      context.push('/dashboard');
                     }
                     : null,
-            child: const Text('Iniciar sesión'),
             style: FilledButton.styleFrom(minimumSize: const Size(200, 40)),
+            child: const Text('Iniciar sesión'),
           ),
         ],
       ),

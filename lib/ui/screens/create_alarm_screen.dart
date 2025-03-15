@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CreateAlarmScreen extends StatefulWidget {
-  const CreateAlarmScreen({Key? key}) : super(key: key);
+  const CreateAlarmScreen({super.key});
 
   @override
   State<CreateAlarmScreen> createState() => _CreateAlarmState();

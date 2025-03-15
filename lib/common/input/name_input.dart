@@ -9,13 +9,14 @@ class Name extends FormzInput<String, NameError> {
   const Name.pure() : super.pure('');
 
   // Call super.dirty to represent a modified form input.
-  const Name.dirty(String value) : super.dirty(value);
+  const Name.dirty(super.value) : super.dirty();
 
   String? get errorMessage {
     if (isValid || isPure) return null;
     if (displayError == NameError.empty) return 'El usuario es requerido';
-    if (displayError == NameError.length)
+    if (displayError == NameError.length) {
       return 'El usuario debe tener mínimo 6 caracteres';
+    }
     return null;
   }
 

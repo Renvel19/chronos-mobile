@@ -11,7 +11,7 @@ class Number extends FormzInput<int, NumberError> {
   const Number.pure() : super.pure(0);
 
   // Call super.dirty to represent a modified form input.
-  const Number.dirty(int value) : super.dirty(value);
+  const Number.dirty(super.value) : super.dirty();
 
   String? get errorMessage {
     if (isValid || isPure) return null;

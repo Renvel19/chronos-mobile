@@ -9,14 +9,16 @@ class Password extends FormzInput<String, PasswordError> {
   const Password.pure() : super.pure('');
 
   // Call super.dirty to represent a modified form input.
-  const Password.dirty(String value) : super.dirty(value);
+  const Password.dirty(super.value) : super.dirty();
 
   String? get errorMessage {
     if (isValid || isPure) return null;
-    if (displayError == PasswordError.empty)
+    if (displayError == PasswordError.empty) {
       return 'La contreaseña es requerida';
-    if (displayError == PasswordError.length)
+    }
+    if (displayError == PasswordError.length) {
       return 'La contraseña debe tener mínimo 8 caracteres';
+    }
     return null;
   }
 

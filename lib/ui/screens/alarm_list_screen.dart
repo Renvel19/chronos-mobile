@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class AlarmListScreen extends StatefulWidget {
-  const AlarmListScreen({Key? key}) : super(key: key);
+  const AlarmListScreen({super.key});
 
   @override
   State<AlarmListScreen> createState() => _AlarmListScreenState();

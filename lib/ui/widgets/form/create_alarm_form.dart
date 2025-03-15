@@ -24,9 +24,9 @@ class CreateAlarmForm extends StatefulWidget {
 class _CreateAlarmFormState extends State<CreateAlarmForm> {
   @override
   Widget build(BuildContext context) {
-    String _sonidoSeleccionado = 'Melodía 1';
-    bool _sonidoProgresivo = false;
-    bool _activarUbicacion = false;
+    String sonidoSeleccionado = 'Melodía 1';
+    bool sonidoProgresivo = false;
+    bool activarUbicacion = false;
 
     // Horas y minutos iniciales
     final createAlarmCubit = context.watch<CreateAlarmCubit>();
@@ -301,7 +301,7 @@ class _CreateAlarmFormState extends State<CreateAlarmForm> {
           child: DropdownButtonHideUnderline(
             child: DropdownButton<String>(
               isExpanded: true,
-              value: _sonidoSeleccionado,
+              value: sonidoSeleccionado,
               hint: const Text('Sonido'),
               icon: const Icon(Icons.keyboard_arrow_down),
               items:
@@ -316,7 +316,7 @@ class _CreateAlarmFormState extends State<CreateAlarmForm> {
               onChanged: (String? newValue) {
                 if (newValue != null) {
                   setState(() {
-                    _sonidoSeleccionado = newValue;
+                    sonidoSeleccionado = newValue;
                   });
                 }
               },
@@ -330,12 +330,12 @@ class _CreateAlarmFormState extends State<CreateAlarmForm> {
         Row(
           children: [
             Checkbox(
-              value: _sonidoProgresivo,
+              value: sonidoProgresivo,
               activeColor: Colors.deepPurple[700],
               onChanged: (bool? value) {
                 if (value != null) {
                   setState(() {
-                    _sonidoProgresivo = value;
+                    sonidoProgresivo = value;
                   });
                 }
               },
@@ -349,12 +349,12 @@ class _CreateAlarmFormState extends State<CreateAlarmForm> {
           children: [
             Radio(
               value: true,
-              groupValue: _activarUbicacion,
+              groupValue: activarUbicacion,
               activeColor: Colors.deepPurple[700],
               onChanged: (bool? value) {
                 if (value != null) {
                   setState(() {
-                    _activarUbicacion = value;
+                    activarUbicacion = value;
                   });
                 }
               },
