@@ -68,6 +68,11 @@ flutter run
 flutter run -d <DEVICE_ID>
 ```
 
+### Ejecutar la aplicación en un dispositivo físico
+- Acceder a la carpeta apk
+- Descargar la apk
+- Instalar la apk en el dispositivo
+
 ### Solución de Problemas
 
 - No se reconoce el emulador: Asegúrate de haber iniciado el emulador antes de ejecutar flutter run.
@@ -83,11 +88,12 @@ flutter run -d <DEVICE_ID>
 
 ## 🛠 **Estructura del proyecto**
 ```
-📂 chronos-mobule
+📂 chronos-mobile
 │── 📂 lib
 │   │── 📂 common   # Widgets reutilizables (Datepicker, Navbar,inputs etc.)
 │   │── 📂 config        # Archivos de configuración de la app (Tema, router etc)
 │   │── 📂 ui       # Las pantallas del sistema 
+│   │── 📂 apk       # Carpeta donde se registra la versión productiva de la apk
 │── 📄 pubspec.yml    # Dependencias y scripts del proyecto
 │── 📄 README.md        # Documentación del proyecto
 ```
