@@ -83,12 +83,12 @@ flutter run -d <DEVICE_ID>
 
 ## 🛠 **Estructura del proyecto**
 ```
-📂 chronos-web
-│── 📂 src
-│   │── 📂 components   # Componentes reutilizables (Datepicker, Navbar y pop-ups.)
-│   │── 📂 app        # Directorio principal de la aplicación
-│   │── 📂 assets       # Íconos e imágenes
-│── 📄 package.json     # Dependencias y scripts del proyecto
+📂 chronos-mobule
+│── 📂 lib
+│   │── 📂 common   # Widgets reutilizables (Datepicker, Navbar,inputs etc.)
+│   │── 📂 config        # Archivos de configuración de la app (Tema, router etc)
+│   │── 📂 ui       # Las pantallas del sistema 
+│── 📄 pubspec.yml    # Dependencias y scripts del proyecto
 │── 📄 README.md        # Documentación del proyecto
 ```
 ---
